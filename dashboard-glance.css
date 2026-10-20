@@ -1,0 +1,454 @@
+/**
+ * Dashboard Glance Admin Styles
+ *
+ * Provides styling for the enhanced At a Glance widget, status pills,
+ * icon picker modal, and settings controls.
+ */
+
+/* Default Settings Notice */
+#gt-defaults button.button-link,
+.dg-defaults-notice button.button-link {
+	text-decoration: none;
+	line-height: 1.5;
+	margin-left: 1em;
+}
+
+#gt-defaults button span,
+.dg-defaults-notice button span {
+	margin-right: .15em;
+	vertical-align: middle;
+}
+
+/* Dashboard Widget Layout */
+#dashboard_right_now .main {
+	padding-bottom: 0;
+}
+
+#wp-version-message,
+#wp-version-message + p {
+	padding-bottom: 1em;
+}
+
+#dashboard_right_now .sub {
+	padding: 0;
+}
+
+#dashboard_right_now .inside .sub > *:not(#gt-form) {
+	padding: 10px;
+	margin: 0;
+}
+
+#dashboard_right_now.closed #gt-settings-wrapper,
+#dashboard_right_now.closed #gt-show-settings,
+#dashboard_right_now.closed .dg-settings-wrapper {
+	display: none !important;
+}
+
+/* Settings Tray Buttons */
+#dashboard_right_now .gt-settings,
+#dashboard_right_now .dg-settings {
+	float: right;
+	width: 24px;
+	height: 24px;
+	text-align: center;
+	padding: 2px 0 0 0;
+	margin: 8px 0 6px 6px;
+	cursor: pointer;
+	border-radius: 3px;
+}
+
+#dashboard_right_now .gt-settings:hover,
+#dashboard_right_now .dg-settings:hover {
+	background: #f0f0f1;
+}
+
+#dashboard_right_now .gt-settings .dashicons,
+#dashboard_right_now .dg-settings .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+	line-height: 1.5;
+	color: #646970;
+}
+
+#dashboard_right_now .gt-settings:hover .dashicons,
+#dashboard_right_now .dg-settings:hover .dashicons {
+	color: #135e96;
+}
+
+#dashboard_right_now #gt-show-settings {
+	margin-right: 0.5em;
+}
+
+#gt-settings-wrapper,
+.dg-settings-wrapper {
+	display: none;
+}
+
+/* Native Counters Replacement */
+.post-count,
+.page-count,
+.comment-count,
+.comment-mod-count {
+	display: none;
+}
+
+#dashboard_right_now li a:before,
+#dashboard_right_now li > span:before {
+	padding-right: 7px;
+}
+
+/* Custom Third-party Plugin Icons */
+#visible-icon.formidableform,
+#visible-icon.gravityform,
+#visible-icon.gravityview,
+#visible-icon.give,
+#visible-icon.sliced {
+	display: inline-block;
+}
+
+#dashboard_right_now li a[data-gt="sliced_quote"]:before,
+#dashboard_right_now li a[data-gt="sliced_invoice"]:before,
+#visible-icon.sliced:before {
+	font-family: 'Slicedicon' !important;
+	content: '\e000' !important;
+}
+
+#visible-icon.sliced:before {
+	font: 400 17px/1 Slicedicon;
+	padding: 6px 7px 6px 6px;
+	position: relative;
+	top: 3px;
+}
+
+#dashboard_right_now li a[data-gt="formidableform"]:before,
+#visible-icon.formidableform:before {
+	font-family: 's11-fp' !important;
+	content: '\e601' !important;
+	position: relative;
+	top: 2px;
+}
+
+#visible-icon.formidableform:before {
+	font: 400 19px/1 s11-fp;
+	padding: 5px 7px 5px 6px;
+	position: relative;
+	top: 8px;
+}
+
+#dashboard_right_now li a[data-gt="gravityform"]:before,
+#visible-icon.gravityform:before {
+	content: '' !important;
+	background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSItMTUgNzcgNTgxIDY0MCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAtMTUgNzcgNTgxIDY0MCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGcgaWQ9IkxheWVyXzIiPjxwYXRoIGZpbGw9IiM4Mjg3OGMiIGQ9Ik00ODkuNSwyMjdMNDg5LjUsMjI3TDMxNS45LDEyNi44Yy0yMi4xLTEyLjgtNTguNC0xMi44LTgwLjUsMEw2MS44LDIyN2MtMjIuMSwxMi44LTQwLjMsNDQuMi00MC4zLDY5Ljd2MjAwLjVjMCwyNS42LDE4LjEsNTYuOSw0MC4zLDY5LjdsMTczLjYsMTAwLjJjMjIuMSwxMi44LDU4LjQsMTIuOCw4MC41LDBMNDg5LjUsNTY3YzIyLjItMTIuOCw0MC4zLTQ0LjIsNDAuMy02OS43VjI5Ni44QzUyOS44LDI3MS4yLDUxMS43LDIzOS44LDQ4OS41LDIyN3ogTTQwMSwzMDAuNHY1OS4zSDI0MXYtNTkuM0g0MDF6IE0xNjMuMyw0OTAuOWMtMTYuNCwwLTI5LjYtMTMuMy0yOS42LTI5LjZjMC0xNi40LDEzLjMtMjkuNiwyOS42LTI5LjZzMjkuNiwxMy4zLDI5LjYsMjkuNkMxOTIuOSw0NzcuNiwxNzkuNiw0OTAuOSwxNjMuMyw0OTAuOXogTTE2My4zLDM1OS43Yy0xNi40LDAtMjkuNi0xMy4zLTI5LjYtMjkuNnMxMy4zLTI5LjYsMjkuNi0yOS42czI5LjYsMTMuMywyOS42LDI5LjZTMTc5LjYsMzU5LjcsMTYzLjMsMzU5Ljd6IE0yNDEsNDkwLjl2LTU5LjNoMTYwdjU5LjNIMjQxeiIvPjwvZz48L3N2Zz4=") !important;
+	width: 1em;
+	height: 1em;
+	background: no-repeat;
+	display: inline-block;
+}
+
+#visible-icon.gravityform:before {
+	width: 1.4em;
+	height: 1.4em;
+	position: relative;
+	top: 6px;
+	margin: 0 6px 0 8px;
+}
+
+#dashboard_right_now li a[data-gt="gravityview"]:before,
+#visible-icon.gravityview:before {
+	font: 400 17px/1 gravityview !important;
+	content: 'a' !important;
+	padding-right: 8px;
+}
+
+#visible-icon.gravityview:before {
+	padding: 6px 7px 6px 6px;
+	position: relative;
+	top: 5px;
+}
+
+#dashboard_right_now li a[data-gt="give_forms"]:before,
+#visible-icon.give:before {
+	font: 400 17px/1 give-icomoon !important;
+	content: '\e800' !important;
+	padding-right: 8px;
+}
+
+#visible-icon.give:before {
+	padding: 6px 7px 6px 6px;
+	position: relative;
+	top: 5px;
+}
+
+/* Quick Action Links */
+#dashboard_right_now li a.gt-add-new:before,
+#dashboard_right_now li a.gt-view-archive:before,
+#dashboard_right_now li a.gt-view-info:before {
+	content: '';
+}
+
+.gt-add-new,
+.gt-view-archive,
+.gt-view-info {
+	opacity: 0;
+	position: relative;
+	top: 2px;
+	text-decoration: none;
+}
+
+.gt-add-new {
+	top: 3px;
+	margin-right: -3px;
+}
+
+.gt-view-info {
+	top: 1px;
+}
+
+#dashboard_right_now li a.gt-add-new span:before,
+#dashboard_right_now li a.gt-view-archive span:before,
+#dashboard_right_now li a.gt-view-info span:before {
+	font-size: 16px;
+}
+
+.gt-item:hover .gt-add-new,
+.gt-item:hover .gt-view-archive,
+.gt-item:hover .gt-view-info,
+.dg-item:hover .gt-add-new,
+.dg-item:hover .gt-view-archive,
+.dg-item:hover .gt-view-info {
+	opacity: .5;
+}
+
+.gt-item:hover .gt-add-new:hover,
+.gt-item:hover .gt-view-archive:hover,
+.gt-item:hover .gt-view-info:hover,
+.dg-item:hover .gt-add-new:hover,
+.dg-item:hover .gt-view-archive:hover,
+.dg-item:hover .gt-view-info:hover {
+	opacity: 1;
+}
+
+/* Status Badges */
+.gt-statuses {
+	margin-left: 2.5em;
+	min-height: 11px;
+}
+
+.gt-status {
+	display: inline-block;
+	font-size: 11px;
+	margin-right: .75em;
+	opacity: .6;
+}
+
+.gt-status:hover {
+	opacity: 1;
+}
+
+.gt-status.gt-moderate {
+	opacity: 1;
+}
+
+#dashboard_right_now .gt-status.gt-moderate a {
+	font-weight: 600;
+}
+
+#dashboard_right_now .gt-status.gt-moderate a:before {
+	color: #646970;
+}
+
+#dashboard_right_now div.gt-status a:before {
+	font-size: 14px;
+	margin: -1px 0 0 0;
+	padding-right: .25em;
+	vertical-align: middle;
+}
+
+#dashboard_right_now div.gt-status a.gt-mine:before {
+	content: "\f511";
+}
+#dashboard_right_now div.gt-status a.gt-future:before {
+	content: '\f145';
+}
+#dashboard_right_now div.gt-status a.gt-pending:before {
+	content: '\f227';
+}
+#dashboard_right_now div[data-glance*="user_request"] div.gt-status a.gt-pending:before {
+	content: '\f469';
+}
+#dashboard_right_now div.gt-status a.gt-confirmed:before {
+	content: '\f227';
+}
+#dashboard_right_now div.gt-status a.gt-failed:before {
+	content: '\f534';
+}
+#dashboard_right_now div.gt-status a.gt-completed:before,
+#dashboard_right_now div.gt-status a.gt-good:before {
+	content: '\f12a';
+}
+#dashboard_right_now div.gt-status a.gt-draft:before {
+	content: '\f339';
+}
+#dashboard_right_now div.gt-status a.gt-archive:before {
+	content: '\f480';
+}
+#dashboard_right_now div.gt-status a.gt-private:before {
+	content: '\f160';
+}
+#dashboard_right_now div.gt-status a.gt-trash:before {
+	content: '\f182';
+}
+#dashboard_right_now div.gt-status a.gt-spam:before {
+	content: '\f334';
+}
+#dashboard_right_now div.gt-status a.gt-unattached:before {
+	content: '\f225';
+}
+#dashboard_right_now div.gt-status a.gt-active:before {
+	content: '\f106';
+	transform: rotate(90deg);
+	position: relative;
+	left: -.15em;
+	top: .1em;
+}
+#dashboard_right_now div.gt-status a.gt-inactive:before {
+	content: '\f460';
+}
+#dashboard_right_now div.gt-status a.gt-recent:before {
+	content: '\f469';
+}
+#dashboard_right_now div.gt-status a.gt-update:before {
+	content: '\f463';
+}
+#dashboard_right_now div.gt-status a.gt-favorites:before {
+	content: '\f155';
+}
+#dashboard_right_now div.gt-status a.gt-mustuse:before {
+	content: '\f468';
+}
+#dashboard_right_now div.gt-status a.gt-dropins:before,
+#dashboard_right_now div.gt-status a.gt-recommended:before {
+	content: '\f546';
+}
+#dashboard_right_now div.gt-status a.gt-paused,
+#dashboard_right_now div.gt-status a.gt-critical {
+	color: #d63638;
+	font-weight: 600;
+}
+#dashboard_right_now div.gt-status a.gt-paused:before,
+#dashboard_right_now div.gt-status a.gt-critical:before {
+	content: '\f534';
+	color: #d63638;
+}
+#dashboard_right_now div.gt-status a.gt-template:before {
+	content: '\f538';
+}
+
+#dashboard-widgets-wrap {
+	overflow: visible;
+}
+
+/* Management Form */
+#gt-form,
+.dg-form {
+	padding: 10px 12px;
+	background: #f6f7f7;
+	border-top: 1px solid #dcdcde;
+}
+
+.element-holder {
+	border-left: 4px dotted #c3c4c7;
+	margin-right: -4px;
+}
+
+.gt-item.gt-editable:hover,
+.dg-item.gt-editable:hover {
+	cursor: move;
+}
+
+#dashboard_right_now .ui-sortable:not(.gt-sorting) li:nth-child(odd) {
+	clear: left;
+}
+
+/* Dashicon Picker Modal */
+.dashicon-picker-container {
+	position: absolute;
+	width: 290px;
+	height: 280px;
+	font-size: 14px;
+	background-color: #fff;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	overflow: hidden;
+	padding: 8px;
+	box-sizing: border-box;
+	z-index: 10000;
+}
+
+.dashicon-picker-container .dashicon-picker-control {
+	height: 34px;
+	margin-bottom: 8px;
+}
+
+.dashicon-picker-container .dashicon-picker-control input.dg-icon-search {
+	width: 100%;
+	height: 30px;
+	font-size: 13px;
+	padding: 4px 8px;
+	border: 1px solid #8c8f94;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.dashicon-picker-container ul.dashicon-picker-list {
+	margin: 0;
+	padding: 0;
+	height: 220px;
+	overflow-y: auto;
+}
+
+.dashicon-picker-container ul.dashicon-picker-list li {
+	display: inline-block;
+	margin: 3px;
+	float: left;
+}
+
+.dashicon-picker-container ul.dashicon-picker-list li a {
+	display: block;
+	text-decoration: none;
+	color: #2c3338;
+	padding: 6px 8px;
+	border: 1px solid #dcdcde;
+	border-radius: 3px;
+}
+
+.dashicon-picker-container ul.dashicon-picker-list li a:hover,
+.dashicon-picker-container ul.dashicon-picker-list li.active a {
+	background: #f0f0f1;
+	border-color: #2271b1;
+	color: #2271b1;
+}
+
+.dashicon-picker-container ul.dashicon-picker-list .dashicons {
+	width: 20px;
+	height: 20px;
+	font-size: 20px;
+	line-height: 1;
+}
+
+.dashicon {
+	display: inline-block;
+}
+
+.dashicon:before {
+	font: normal 20px/1 'dashicons';
+	padding: 6px;
+	left: -1px;
+	position: relative;
+	vertical-align: top;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-decoration: none !important;
+}
